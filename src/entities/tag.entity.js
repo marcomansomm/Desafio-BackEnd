@@ -8,6 +8,11 @@ const tagSchema = new Schema({
     color: {
         type: String,
         required: true,
+    },
+    tasks: {
+        type: Schema.Types.ObjectId,
+        required: true,
+        ref: 'Task'
     }
 });
 
