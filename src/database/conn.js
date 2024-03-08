@@ -9,7 +9,7 @@ async function run() {
     mongoose.set('strictQuery', true);
     await mongoose.connect(uri, clientOptions);
     await mongoose.connection.db.admin().command({ ping: 1 });
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+    console.log("Pinged your deploy. You successfully connected to MongoDB!");
   } catch (error) {
     console.log(error)
   }
