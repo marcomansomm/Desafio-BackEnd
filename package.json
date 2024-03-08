@@ -25,5 +25,17 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "release-it": {
+    "git": {
+      "requireBranch": "main",
+      "commitMessage": "chore: release v${version}"
+    },
+    "github": {
+      "release": true
+    },
+    "hooks": {
+      "after:git:release": "git push origin HEAD"
+    }
   }
 }
