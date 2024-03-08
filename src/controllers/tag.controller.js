@@ -1,60 +1,44 @@
 const Tag = require('../entities/tag.entity');
 
 module.exports = {
-    async get(req, res) {
-        try {
-            const tags = await Tag.find();
-
-            if(!tags) {
-                return res.status(404).json({message: 'Tags not found!'});
-            }
-
-            return res.status(200).json({tags});
-        } catch (error) {
-            return res.status(500).json({message: 'Internal server error!'});
+    get: async (req, res) => {
+        const tags = await Tag.find();
+        if(!tags){
+            return res.status(404).json({message: 'nenhuma tag encontrada'})
         }
-        
+        return res.json({tags ,message: 'buscando todas as tags'});
     },
-    async create(req, res){
-        try {
-            const { name, color } = req.body;
-            const newTag = new Tag({ name, color });
+    findById: async (req, res) => {
+        const id = req.params.id;
+        console.log(id);
+        const tagEncontrada = await Tag.findById(id);
+        if(!tagEncontrada){
+            return res.status(404).json({message: 'nenhuma tag encontrada'})
+        }
+        return res.json({tagEncontrada, message: "buscando por id tag"});
+    },
+    post: async (req, res) => {
+        const { name, color } = req.body;
+        const newTag = Tag({name, color});
+        await newTag.save();
 
-            newTag.save();
-
-            return res.status(201).json({newTag, message: 'Tag created!'});
-        } catch (error) {
-            return res.status(500).json({message: 'Internal server error!'});
-        }
-        
+        return res.json({newTag, message: 'criando tag'});
     },
-    async update(req, res){
-        try {
-            const id = req.params.id;
-            const { name, color } = req.body;
-            const updatedTag = await Tag.findByIdAndUpdate(id, { name, color });
-            
-            if(!updatedTag){
-                return res.status(404).json({message: 'Tag not found!'});
-            }
-            
-            return res.status(200).json({updatedTag, message: 'Tag updated!'});
-        } catch (error) {
-            return res.status(500).json({message: 'Internal server error!'});
+    put: async (req, res) => {
+        const { name, color } = req.body;
+        const id = req.params.id;
+        const updatedTag = await Tag.findByIdAndUpdate(id, {name, color});
+        if(!updatedTag){
+            return res.status(404).json({message: 'nenhuma tag encontrada'})
         }
+        return res.json({updatedTag, message: 'atualizando tag'});
     },
-    async delete(req, res){
-        try {
-            const id = req.params.id;
-            const deletedTag = await Tag.findByIdAndDelete(id);
-            
-            if(!deletedTag){
-                return res.status(404).json({message: 'Tag not found!'});
-            }
-            
-            return res.status(200).json({message: 'Tag deleted!'});
-        } catch (error) {
-            return res.status(500).json({message: 'Internal server error!'});
+    delete: async (req, res) => {
+        const id = req.params.id;
+        const deletedTag = await Tag.findByIdAndDelete(id);
+        if(!deletedTag){
+            return res.status(404).json({message: 'nenhuma tag encontrada'})
         }
-    },
+        return res.json({deletedTag, message: 'atualizando tag'});
+    }
 }

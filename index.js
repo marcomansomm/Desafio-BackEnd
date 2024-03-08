@@ -5,9 +5,9 @@ const conn = require('./src/database/conn');
 const app = express();
 const port = 3334;
   
-app.use(express.json());
+app.use(express.json()); 
 app.use(express.urlencoded({ extended: true }));
-app.use('/api', routes);
+app.use('/api', routes) 
 
 conn();
 

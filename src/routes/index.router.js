@@ -1,11 +1,10 @@
 const express = require("express")
 const routes = express.Router()
-
-const taskRoutes = require("./task.router");
-const tagRoutes = require("./tag.router");
+const taskRoutes = require('./task.router')
+const tagRoutes = require('./tag.router')
 
 const routesList = {
-    taskRoutes,
+    // taskRoutes,
     tagRoutes
 };
 
