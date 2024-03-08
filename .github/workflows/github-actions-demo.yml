@@ -20,8 +20,8 @@ jobs:
   release:
     runs-on: ubuntu-latest
     env:
-      NPM_TOKEN: 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
-      GITHUB_TOKEN: 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
+        NPM_TOKEN: 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
+        GITHUB_TOKEN: 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
     steps:
       - uses: actions/checkout@v2
         with:
@@ -31,5 +31,9 @@ jobs:
         run: |
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git remote rm origin
+          git remote add origin https://github.com/marcomansomm/Desafio-BackEnd.git
+          git symbolic-ref HEAD refs/heads/main
+      - run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
       - run: npm install
-      - run: npm run release
+      - run: npm run release --no-git
