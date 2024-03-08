@@ -35,4 +35,4 @@ jobs:
           git symbolic-ref HEAD refs/heads/main
       - run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
       - run: npm install
-      - run: npm run release
+      - run: npm run release --git.pushArgs=--force
