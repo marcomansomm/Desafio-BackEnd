@@ -20,7 +20,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     env:
-        NPM_TOKEN: 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
+        NPM_TOKEN: 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
         GITHUB_TOKEN: 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
     steps:
       - uses: actions/checkout@v2
