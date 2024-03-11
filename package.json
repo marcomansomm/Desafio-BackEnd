@@ -31,7 +31,7 @@
     "git": {
       "requireBranch": "main",
       "commitMessage": "chore: release v${version}",
-      "push": false
+      "pushRepo": "https://github.com/marcomansomm/Desafio-BackEnd.git"
     },
     "npm": {
       "publish": false
