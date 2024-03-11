@@ -32,7 +32,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: git config
         run: |
-          git config user.name "marcomansomm"
+          git config user.name "${{ github.actor }}"
           git config user.email "marcoantonio16092003@gmail.com"
           git remote rm origin
           git remote add origin https://github.com/marcomansomm/Desafio-BackEnd.git
