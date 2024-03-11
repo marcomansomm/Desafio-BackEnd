@@ -38,7 +38,7 @@ jobs:
           git remote add origin https://github.com/marcomansomm/Desafio-BackEnd.git
           git symbolic-ref HEAD refs/heads/main
       - name: Run Release
-        run: npm run release --ci --no-git.requireUpstream
+        run: npm run release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
