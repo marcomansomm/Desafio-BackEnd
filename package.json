@@ -1,12 +1,13 @@
 {
   "name": "desafioback",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start:dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "release-it"
+    "release": "release-it",
+    "commit": "git cz"
   },
   "author": "",
   "license": "ISC",
