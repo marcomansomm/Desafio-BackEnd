@@ -41,17 +41,11 @@
     },
     "github": {
       "release": true,
-      "releaseNotes": "git log --no-merges --pretty=format:\"* %s %h\" ${latestTag}...main"
+      "releaseNotes": "git log --no-merges --pretty=format:\"* %s %h (%an)\" ${latestTag}...main"
     },
     "hooks": {
       "after:git:release": "git push origin HEAD",
       "after:bump": "npx auto-changelog -p --output CHANGELOG.md"
-    }
-  },
-  "plugins": {
-    "@release-it/conventional-changelog": {
-      "preset": "angular",
-      "infile": "CHANGELOG.md"
     }
   }
 }
