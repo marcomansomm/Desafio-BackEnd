@@ -20,6 +20,7 @@
     "release-it": "^17.1.1"
   },
   "devDependencies": {
+    "@release-it/conventional-changelog": "^8.0.1",
     "cz-conventional-changelog": "^3.3.0"
   },
   "config": {
@@ -43,6 +44,12 @@
     },
     "hooks": {
       "after:git:release": "git push origin HEAD"
+    }
+  },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "preset": "angular",
+      "infile": "CHANGELOG.md"
     }
   }
 }
