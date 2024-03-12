@@ -43,5 +43,5 @@ jobs:
         env: 
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      -name: Run ls
-          run: ls
+      - name: Run ls
+        run: ls
