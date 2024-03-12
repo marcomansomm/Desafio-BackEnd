@@ -45,7 +45,7 @@
     },
     "hooks": {
       "after:git:release": "git push origin HEAD",
-      "after:bump": "npx auto-changelog -p"
+      "after:bump": "npx auto-changelog -p --output CHANGELOG.md"
     }
   },
   "plugins": {
