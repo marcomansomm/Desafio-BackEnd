@@ -33,7 +33,8 @@
       "requireBranch": "main",
       "commitMessage": "chore: release v${version}",
       "pushRepo": "origin",
-      "requireUpstream": false
+      "requireUpstream": false,
+      "changelog": "npx auto-changelog --stdout --commit-limit false -u --template https://raw.githubusercontent.com/release-it/release-it/main/templates/changelog-compact.hbs"
     },
     "npm": {
       "publish": false
@@ -43,7 +44,8 @@
       "releaseNotes": "git log --no-merges --pretty=format:\"* %s %h\" ${latestTag}...main"
     },
     "hooks": {
-      "after:git:release": "git push origin HEAD"
+      "after:git:release": "git push origin HEAD",
+      "after:bump": "npx auto-changelog -p"
     }
   },
   "plugins": {
