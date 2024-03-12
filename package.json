@@ -38,7 +38,8 @@
       "publish": false
     },
     "github": {
-      "release": true
+      "release": true,
+      "releaseNotes": "git log --no-merges --pretty=format:\"* %s %h\" ${latestTag}...main"
     },
     "hooks": {
       "after:git:release": "git push origin HEAD"
