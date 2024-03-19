@@ -6,7 +6,6 @@
   "scripts": {
     "start:dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "release-it",
     "commit": "git cz"
   },
   "author": "",
@@ -16,8 +15,7 @@
     "dotenv": "^16.4.1",
     "express": "^4.18.2",
     "mongoose": "^8.1.1",
-    "nodemon": "^3.0.3",
-    "release-it": "^17.1.1"
+    "nodemon": "^3.0.3"
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^8.0.1",
