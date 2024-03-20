@@ -47,5 +47,11 @@
       "after:git:release": "git push origin HEAD",
       "after:bump": "npx auto-changelog -p --output CHANGELOG.md"
     }
+  },
+  "auto-changelog": {
+    "output": "CHANGELOG.md",
+    "template": "keepachangelog",
+    "unreleased": true,
+    "commitLimit": false
   }
 }
