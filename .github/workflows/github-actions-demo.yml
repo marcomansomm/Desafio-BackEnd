@@ -40,6 +40,7 @@ jobs:
           git remote add origin https://github.com/marcomansomm/Desafio-BackEnd.git
           git symbolic-ref HEAD refs/heads/main
           git pull origin main
+          git status
       - name: Run Release
         run: npx release-it --ci
         env: 
