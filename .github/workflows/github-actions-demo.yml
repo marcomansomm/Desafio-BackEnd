@@ -27,7 +27,6 @@ jobs:
       - name: Install Dependencies
         run: npm ci
       - run: npm install
-      - run: npm install -g release-it
       - name: npm config
         run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
         env:
@@ -39,10 +38,8 @@ jobs:
           git remote rm origin
           git remote add origin https://github.com/marcomansomm/Desafio-BackEnd.git
           git symbolic-ref HEAD refs/heads/main
-          git pull origin main
-          git status
       - name: Run Release
-        run: release-it --ci
+        run: npm run release --ci --no-increment
         env: 
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
