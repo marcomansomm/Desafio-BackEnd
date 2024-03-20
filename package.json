@@ -6,6 +6,7 @@
   "scripts": {
     "start:dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "release-it", 
     "commit": "git cz"
   },
   "author": "",
@@ -18,7 +19,9 @@
     "nodemon": "^3.0.3"
   },
   "devDependencies": {
-    "cz-conventional-changelog": "^3.3.0"
+    "@release-it/conventional-changelog": "^8.0.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "release-it": "^17.1.1"
   },
   "config": {
     "commitizen": {
