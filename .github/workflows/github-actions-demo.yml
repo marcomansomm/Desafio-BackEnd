@@ -42,7 +42,7 @@ jobs:
           git pull origin main
           git status
       - name: Run Release
-        run: npx release-it --ci
+        run: release-it --ci
         env: 
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
